@@ -1,0 +1,14 @@
+name: trust-fixture
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  changed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: tj-actions/changed-files@v39
+  lint-only:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "no action references"
